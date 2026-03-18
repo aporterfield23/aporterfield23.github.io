@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodSaves — Brand Mood Board</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:       #2F9B72;
+      --green-dark:  #1E6B4E;
+      --green-light: #D6F0E6;
+      --orange:      #E96B2D;
+      --orange-lt:   #FDE8DA;
+      --yellow:      #F5C842;
+      --yellow-lt:   #FEF5D6;
+      --slate:       #1E2E3D;
+      --slate-mid:   #4A5A6B;
+      --slate-soft:  #8A97A5;
+      --cream:       #FAF6EE;
+      --cream-dark:  #F0EAE0;
+      --bg:          #F0EAE0;
+      --white:       #FFFFFF;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--slate);
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────────────────── */
+    .hero {
+      background: var(--slate);
+      padding: 72px 64px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 50%, rgba(47,155,114,.30) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(233,107,45,.20) 0%, transparent 50%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 1140px; margin: 0 auto; }
+    .hero-eyebrow {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 3.5px;
+      text-transform: uppercase; color: var(--green); margin-bottom: 18px;
+    }
+    .hero-lockup { display: flex; align-items: flex-end; gap: 0; margin-bottom: 16px; }
+    .hero-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(56px, 8vw, 96px);
+      line-height: 1; color: var(--white);
+    }
+    .hero-title span { color: var(--yellow); font-style: italic; }
+    .hero-sub {
+      font-size: 17px; color: rgba(255,255,255,.58);
+      max-width: 500px; line-height: 1.65; margin-bottom: 32px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 9px; }
+    .chip {
+      padding: 7px 17px; border-radius: 100px;
+      font-size: 12px; font-weight: 700;
+    }
+    .chip-g { background: var(--green); color: white; }
+    .chip-o { background: var(--orange); color: white; }
+    .chip-y { background: var(--yellow); color: var(--slate); }
+    .chip-w { background: rgba(255,255,255,.12); color: white; border: 1px solid rgba(255,255,255,.2); }
+
+    /* ─── WRAPPER ───────────────────────────────────────────────────────── */
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 64px 32px; }
+    .section-eyebrow {
+      font-size: 10px; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--slate-soft); margin-bottom: 6px;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 32px; color: var(--slate); margin-bottom: 6px;
+    }
+    .section-desc {
+      font-size: 14px; color: var(--slate-mid); line-height: 1.7;
+      max-width: 580px; margin-bottom: 36px;
+    }
+    .divider { border: none; border-top: 1px solid #D9D0C6; margin: 0 32px; }
+
+    /* ─── COLOR PALETTE ─────────────────────────────────────────────────── */
+    .palette { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .swatch { border-radius: 14px; overflow: hidden; box-shadow: 0 2px 14px rgba(0,0,0,.08); }
+    .swatch-color { height: 100px; }
+    .swatch-info { background: white; padding: 12px 14px; }
+    .swatch-name { font-weight: 700; font-size: 12px; color: var(--slate); }
+    .swatch-hex  { font-family: monospace; font-size: 11px; color: var(--slate-soft); margin-top: 2px; }
+    .swatch-use  { font-size: 10.5px; color: var(--slate-mid); margin-top: 5px; line-height: 1.4; }
+
+    /* ─── TYPOGRAPHY ────────────────────────────────────────────────────── */
+    .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .type-card {
+      background: white; border-radius: 20px; padding: 36px 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    }
+    .type-display {
+      font-family: 'DM Serif Display', serif;
+      font-size: 44px; line-height: 1.1; color: var(--slate); margin-bottom: 20px;
+    }
+    .type-display em { color: var(--green); }
+    .type-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--slate-soft); }
+    .scale { display: flex; flex-direction: column; gap: 12px; }
+    .scale-row { display: flex; align-items: baseline; gap: 16px; }
+    .scale-tag { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--slate-soft); width: 54px; flex-shrink: 0; }
+    .s-h1  { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--slate); }
+    .s-h2  { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--slate); }
+    .s-h3  { font-size: 17px; font-weight: 700; color: var(--slate); }
+    .s-bd  { font-size: 14px; color: var(--slate-mid); }
+    .s-sm  { font-size: 11px; color: var(--slate-soft); letter-spacing: .3px; }
+
+    /* ─── DIVERSE SHOPPERS — PHOTO GRID ─────────────────────────────────── */
+    .photo-mosaic {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 240px 240px;
+      gap: 14px;
+    }
+    /* Feature cards span two columns / rows */
+    .photo-card { position: relative; border-radius: 18px; overflow: hidden; cursor: default; }
+    .photo-card.span-2c { grid-column: span 2; }
+    .photo-card.span-2r { grid-row: span 2; }
+    .photo-card img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .5s ease;
+    }
+    .photo-card:hover img { transform: scale(1.04); }
+    .photo-card-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.72) 0%, transparent 100%);
+      padding: 20px 18px 18px;
+    }
+    .photo-card-name { font-size: 14px; font-weight: 700; color: white; margin-bottom: 2px; }
+    .photo-card-desc { font-size: 12px; color: rgba(255,255,255,.78); }
+    .photo-card-badge {
+      position: absolute; top: 14px; right: 14px;
+      background: rgba(255,255,255,.18); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,.28);
+      color: white; font-size: 10px; font-weight: 700;
+      padding: 5px 11px; border-radius: 100px;
+    }
+    /* Fallback gradient if image fails to load */
+    .photo-card::before {
+      content: ''; position: absolute; inset: 0; z-index: 0;
+      opacity: 0; transition: opacity .3s;
+    }
+    .photo-card img.error { display: none; }
+
+    /* ─── PHOTOGRAPHY DIRECTION ─────────────────────────────────────────── */
+    .photo-dir { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .dir-tile {
+      border-radius: 18px; overflow: hidden; position: relative; aspect-ratio: 4/3;
+    }
+    .dir-tile img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .dir-tile-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,0) 60%);
+      padding: 20px 18px 16px;
+    }
+    .dir-title { font-size: 13px; font-weight: 700; color: white; margin-bottom: 4px; }
+    .dir-sub   { font-size: 11px; color: rgba(255,255,255,.8); line-height: 1.5; }
+
+    /* ─── UI COMPONENTS ─────────────────────────────────────────────────── */
+    .ui-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .ui-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 22px rgba(0,0,0,.09); }
+    .ui-head {
+      background: var(--slate); padding: 13px 18px;
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,.45);
+    }
+    .ui-body { padding: 22px 20px; }
+
+    /* Recipe card */
+    .rc-img {
+      width: 100%; height: 130px; border-radius: 12px;
+      object-fit: cover; display: block; margin-bottom: 14px; position: relative;
+    }
+    .rc-img-wrap { position: relative; margin-bottom: 14px; }
+    .rc-img-wrap img { width: 100%; height: 130px; border-radius: 12px; object-fit: cover; display: block; }
+    .rc-badge {
+      position: absolute; top: 10px; right: 10px;
+      background: var(--yellow); color: var(--slate);
+      font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 100px;
+    }
+    .rc-title { font-weight: 700; font-size: 15px; color: var(--slate); margin-bottom: 5px; }
+    .rc-meta  { font-size: 12px; color: var(--slate-soft); margin-bottom: 12px; }
+    .tags     { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .tag { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; }
+    .tag-g { background: var(--green-light); color: var(--green-dark); }
+    .tag-o { background: var(--orange-lt);   color: var(--orange); }
+    .tag-y { background: var(--yellow-lt);   color: #8B6A00; }
+    .btn { width: 100%; padding: 12px; border-radius: 11px; border: none; font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+    .btn-p { background: var(--green); color: white; }
+    .btn-s { background: var(--orange-lt); color: var(--orange); }
+
+    /* Onboarding */
+    .ob-title { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--slate); margin-bottom: 6px; }
+    .ob-sub   { font-size: 13px; color: var(--slate-mid); margin-bottom: 18px; line-height: 1.5; }
+    .store-row {
+      display: flex; align-items: center; gap: 11px;
+      padding: 10px 12px; border-radius: 11px; margin-bottom: 7px;
+    }
+    .store-row.sel { background: var(--cream); }
+    .store-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;
+    }
+    .store-info { flex: 1; }
+    .store-name { font-size: 13px; font-weight: 700; color: var(--slate); }
+    .store-dist { font-size: 11px; color: var(--slate-soft); }
+    .check {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      border: 2px solid var(--cream-dark);
+    }
+    .check.on { background: var(--green); border-color: var(--green); }
+
+    /* Feedback */
+    .msg { border-radius: 12px; padding: 15px 16px; margin-bottom: 14px; }
+    .msg-s { background: var(--green-light); border: 1.5px solid #A8DCC7; }
+    .msg-e { background: #FFF1F0; border: 1.5px solid #FFCCC7; }
+    .msg-title { font-weight: 700; font-size: 13px; margin-bottom: 5px; }
+    .msg-s .msg-title { color: var(--green-dark); }
+    .msg-e .msg-title { color: #B92A2A; }
+    .msg-body  { font-size: 12px; color: var(--slate-mid); line-height: 1.5; }
+
+    /* ─── VOICE CARDS ───────────────────────────────────────────────────── */
+    .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .voice-card {
+      background: white; border-radius: 18px; padding: 26px 24px;
+      box-shadow: 0 2px 14px rgba(0,0,0,.06);
+    }
+    .voice-type { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 11px; }
+    .voice-text { font-size: 15px; font-weight: 500; color: var(--slate); line-height: 1.7; }
+    .voice-note { font-size: 11.5px; color: var(--slate-soft); margin-top: 10px; font-style: italic; }
+
+    /* ─── ICON ROW ──────────────────────────────────────────────────────── */
+    .icon-row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 14px; }
+    .icon-tile {
+      background: white; border-radius: 14px; padding: 18px 10px;
+      display: flex; flex-direction: column; align-items: center; gap: 9px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+    .icon-bg {
+      width: 46px; height: 46px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .icon-label { font-size: 10.5px; font-weight: 700; color: var(--slate-mid); text-align: center; }
+
+    /* ─── PRINCIPLES ────────────────────────────────────────────────────── */
+    .principles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .principle { border-radius: 18px; padding: 30px 22px; }
+    .p-num   { font-family: 'DM Serif Display', serif; font-size: 44px; opacity: .18; line-height: 1; margin-bottom: 10px; }
+    .p-title { font-weight: 800; font-size: 15px; margin-bottom: 8px; }
+    .p-desc  { font-size: 13px; line-height: 1.65; opacity: .88; }
+
+    /* ─── FOOTER ────────────────────────────────────────────────────────── */
+    .footer {
+      background: var(--slate); padding: 36px 64px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-brand { font-family: 'DM Serif Display', serif; font-size: 26px; color: white; }
+    .footer-brand span { color: var(--yellow); font-style: italic; }
+    .footer-tagline { font-size: 13px; color: rgba(255,255,255,.45); margin-top: 4px; }
+    .footer-note { font-size: 11px; color: rgba(255,255,255,.35); }
+
+    @media (max-width: 800px) {
+      .palette { grid-template-columns: repeat(3, 1fr); }
+      .type-grid, .ui-grid, .photo-dir, .voice-grid { grid-template-columns: 1fr; }
+      .photo-mosaic { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+      .photo-card.span-2c, .photo-card.span-2r { grid-column: span 1; grid-row: span 1; }
+      .principles { grid-template-columns: 1fr 1fr; }
+      .icon-row { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Brand Mood Board · Visual Identity System</div>
+    <div class="hero-lockup">
+      <h1 class="hero-title">Food<span>Saves</span></h1>
+    </div>
+    <p class="hero-sub">Turn this week's grocery deals into simple, healthy meals — for everyone, every budget, every table.</p>
+    <div class="chips">
+      <span class="chip chip-g">Modern · Approachable</span>
+      <span class="chip chip-o">Colorful · Not Cartoonish</span>
+      <span class="chip chip-y">Inclusive · Diverse</span>
+      <span class="chip chip-w">Practical · Empowering</span>
+      <span class="chip chip-w">Warm · Non-judgmental</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 01. COLOR PALETTE ═════════════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">01 — Foundation</div>
+  <h2 class="section-title">Color Palette</h2>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2F9B72"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Fresh Sage</div>
+        <div class="swatch-hex">#2F9B72</div>
+        <div class="swatch-use">Primary CTAs, headers, active states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1E6B4E"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Forest</div>
+        <div class="swatch-hex">#1E6B4E</div>
+        <div class="swatch-use">Hover states, pressed buttons</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E96B2D"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Tangerine</div>
+        <div class="swatch-hex">#E96B2D</div>
+        <div class="swatch-use">Deal highlights, secondary actions</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F5C842"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Lemon Zest</div>
+        <div class="swatch-hex">#F5C842</div>
+        <div class="swatch-use">Savings badges, success states</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1E2E3D"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Slate</div>
+        <div class="swatch-hex">#1E2E3D</div>
+        <div class="swatch-use">Body text, dark UI surfaces</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FAF6EE"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm Cream</div>
+        <div class="swatch-hex">#FAF6EE</div>
+        <div class="swatch-use">App backgrounds, card bases</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══ 02. TYPOGRAPHY ════════════════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">02 — Typography</div>
+  <h2 class="section-title">Type System</h2>
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="type-display">Turn deals into<br/><em>great meals.</em></div>
+      <div class="type-label">DM Serif Display · Display & Headings · Italic adds warmth</div>
+    </div>
+    <div class="type-card">
+      <div class="scale">
+        <div class="scale-row"><span class="scale-tag">H1</span><span class="s-h1">Weekly Deals</span></div>
+        <div class="scale-row"><span class="scale-tag">H2</span><span class="s-h2">Suggested Recipes</span></div>
+        <div class="scale-row"><span class="scale-tag">H3</span><span class="s-h3">Lemon Garlic Chicken</span></div>
+        <div class="scale-row"><span class="scale-tag">Body</span><span class="s-bd">Ready in 25 min · Serves 4</span></div>
+        <div class="scale-row"><span class="scale-tag">Small</span><span class="s-sm">Based on items on sale at Kroger</span></div>
+      </div>
+      <div style="margin-top:20px" class="type-label">Plus Jakarta Sans · UI Text · Weights 400–800</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══ 03. THE FOODSAVES COMMUNITY ══════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">03 — People</div>
+  <h2 class="section-title">The FoodSaves Community</h2>
+  <p class="section-desc">
+    FoodSaves is built for everyone at the table. Photography reflects real diversity — across age, race, gender, sexual orientation, family structure, and cultural background. Every user should see themselves here.
+  </p>
+
+  <div class="photo-mosaic">
+
+    <!-- LGBTQ+ family — featured, spans 2 columns -->
+    <div class="photo-card span-2c">
+      <img
+        src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&h=480&fit=crop&auto=format&q=85"
+        alt="Same-sex couple cooking together at home with their child"
+        loading="lazy"
+      />
+      <div class="photo-card-badge">LGBTQ+ Family</div>
+      <div class="photo-card-overlay">
+        <div class="photo-card-name">Every family welcome</div>
+        <div class="photo-card-desc">Love, meals, and great deals — for every kind of home</div>
+      </div>
+    </div>
+
+    <!-- Black father & son cooking -->
+    <div class="photo-card">
+      <img
+        src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=500&h=480&fit=crop&auto=format&q=85"
+        alt="Black father and young son cooking together in the kitchen"
+        loading="lazy"
+      />
+      <div class="photo-card-badge">Family</div>
+      <div class="photo-card-overlay">
+        <div class="photo-card-name">Cooking together</div>
+        <div class="photo-card-desc">Building memories with budget-friendly meals</div>
+      </div>
+    </div>
+
+    <!-- Black woman cooking -->
+    <div class="photo-card">
+      <img
+        src="https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?w=500&h=480&fit=crop&auto=format&q=85"
+        alt="Black woman cooking confidently in her kitchen"
+        loading="lazy"
+      />
+      <div class="photo-card-overlay">
+        <div class="photo-card-name">Home chef vibes</div>
+        <div class="photo-card-desc">Simple ingredients, delicious results</div>
+      </div>
+    </div>
+
+    <!-- Older couple grocery shopping — spans 2 rows -->
+    <div class="photo-card span-2r">
+      <img
+        src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=500&h=980&fit=crop&auto=format&q=85"
+        alt="Older couple shopping happily together in a grocery store"
+        loading="lazy"
+      />
+      <div class="photo-card-badge">60+ Shoppers</div>
+      <div class="photo-card-overlay">
+        <div class="photo-card-name">Smart shopping, any age</div>
+        <div class="photo-card-desc">Finding deals together makes cooking more fun</div>
+      </div>
+    </div>
+
+    <!-- Woman in grocery aisle -->
+    <div class="photo-card">
+      <img
+        src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?w=500&h=240&fit=crop&auto=format&q=85"
+        alt="Woman browsing products in a grocery store aisle"
+        loading="lazy"
+      />
+      <div class="photo-card-overlay">
+        <div class="photo-card-name">Making it easy</div>
+        <div class="photo-card-desc">Know exactly what to grab before you shop</div>
+      </div>
+    </div>
+
+    <!-- Diverse group cooking together -->
+    <div class="photo-card">
+      <img
+        src="https://images.unsplash.com/photo-1528712306091-ed0763094c98?w=500&h=240&fit=crop&auto=format&q=85"
+        alt="Diverse group of friends cooking a meal together"
+        loading="lazy"
+      />
+      <div class="photo-card-badge">Community</div>
+      <div class="photo-card-overlay">
+        <div class="photo-card-name">Food brings everyone together</div>
+        <div class="photo-card-desc">Shared meals, shared savings</div>
+      </div>
+    </div>
+
+    <!-- Man in grocery store -->
+    <div class="photo-card">
+      <img
+        src="https://images.unsplash.com/photo-1521986329282-0436c1f1e212?w=500&h=240&fit=crop&auto=format&q=85"
+        alt="Man browsing fresh produce in a grocery store"
+        loading="lazy"
+      />
+      <div class="photo-card-overlay">
+        <div class="photo-card-name">From the store to your table</div>
+        <div class="photo-card-desc">FoodSaves finds the deals — you do the cooking</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══ 04. PHOTOGRAPHY DIRECTION ════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">04 — Imagery</div>
+  <h2 class="section-title">Photography Direction</h2>
+  <p class="section-desc">
+    Warm natural light. Real kitchens and real grocery stores. Imperfect, joyful, authentic moments — never overly polished or staged.
+  </p>
+
+  <div class="photo-dir">
+    <div class="dir-tile">
+      <img
+        src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=700&h=525&fit=crop&auto=format&q=85"
+        alt="Fresh colorful produce at a farmer's market or grocery store"
+        loading="lazy"
+      />
+      <div class="dir-tile-overlay">
+        <div class="dir-title">Fresh & Whole Ingredients</div>
+        <div class="dir-sub">Natural light · Texture & color · Overhead or 45° angles</div>
+      </div>
+    </div>
+    <div class="dir-tile">
+      <img
+        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=525&fit=crop&auto=format&q=85"
+        alt="Finished plated meal, warm and inviting, in a home kitchen"
+        loading="lazy"
+      />
+      <div class="dir-tile-overlay">
+        <div class="dir-title">Plated Meals — Warm & Real</div>
+        <div class="dir-sub">Warm tones · Steam visible · Rustic, imperfect plating</div>
+      </div>
+    </div>
+    <div class="dir-tile">
+      <img
+        src="https://images.unsplash.com/photo-1529543544282-ea669407fca3?w=700&h=525&fit=crop&auto=format&q=85"
+        alt="People smiling and eating together at a shared meal"
+        loading="lazy"
+      />
+      <div class="dir-tile-overlay">
+        <div class="dir-title">People Cooking & Sharing</div>
+        <div class="dir-sub">Candid, joyful moments · Authentic · Unposed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══ 05. UI COMPONENTS ═════════════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">05 — Components</div>
+  <h2 class="section-title">UI Component Preview</h2>
+  <div class="ui-grid">
+
+    <!-- Recipe card -->
+    <div class="ui-card">
+      <div class="ui-head">Recipe Card</div>
+      <div class="ui-body">
+        <div class="rc-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=500&h=260&fit=crop&auto=format&q=80"
+            alt="Lemon garlic chicken thighs"
+            style="width:100%;height:130px;border-radius:12px;object-fit:cover;display:block;"
+            loading="lazy"
+          />
+          <span class="rc-badge">Save $4.80</span>
+        </div>
+        <div class="rc-title">Lemon Garlic Chicken Thighs</div>
+        <div class="rc-meta">⏱ 25 min &nbsp;·&nbsp; 👤 4 servings</div>
+        <div class="tags">
+          <span class="tag tag-g">On Sale</span>
+          <span class="tag tag-y">Family Fave</span>
+          <span class="tag tag-o">Quick & Easy</span>
+        </div>
+        <button class="btn btn-p">Start Cooking</button>
+      </div>
+    </div>
+
+    <!-- Onboarding -->
+    <div class="ui-card">
+      <div class="ui-head">Onboarding</div>
+      <div class="ui-body">
+        <div class="ob-title">Welcome to FoodSaves 👋</div>
+        <div class="ob-sub">Turn this week's grocery deals into simple, healthy meals. Start by choosing your store.</div>
+        <div class="store-row sel">
+          <div class="store-icon" style="background:#FDE8DA">🛒</div>
+          <div class="store-info"><div class="store-name">Kroger</div><div class="store-dist">3 locations nearby</div></div>
+          <div class="check on"></div>
+        </div>
+        <div class="store-row">
+          <div class="store-icon" style="background:#E8F5E9">🌿</div>
+          <div class="store-info"><div class="store-name">Whole Foods</div><div class="store-dist">1.2 mi away</div></div>
+          <div class="check"></div>
+        </div>
+        <div class="store-row">
+          <div class="store-icon" style="background:#EDE7F6">🏪</div>
+          <div class="store-info"><div class="store-name">Safeway</div><div class="store-dist">2 locations nearby</div></div>
+          <div class="check"></div>
+        </div>
+        <div style="margin-top:16px"><button class="btn btn-p">Continue</button></div>
+      </div>
+    </div>
+
+    <!-- Feedback states -->
+    <div class="ui-card">
+      <div class="ui-head">Feedback States</div>
+      <div class="ui-body">
+        <div class="msg msg-s">
+          <div class="msg-title">Nice work! 🎉</div>
+          <div class="msg-body">Your meals and grocery list are ready. You're all set to save money and cook something great.</div>
+        </div>
+        <div class="msg msg-e">
+          <div class="msg-title">📶 Connection Lost</div>
+          <div class="msg-body">We couldn't save your list because your internet dropped. Check your connection and try again.</div>
+        </div>
+        <button class="btn btn-s">Try Again</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══ 06. BRAND VOICE ═══════════════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">06 — Voice</div>
+  <h2 class="section-title">Brand Voice in Action</h2>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-type" style="color:var(--green)">Onboarding</div>
+      <div class="voice-text">"Welcome to FoodSaves 👋 Turn this week's grocery deals into simple, healthy meals. Start by choosing your store."</div>
+      <div class="voice-note">Welcoming · Benefit-led · Clear first step</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-type" style="color:var(--orange)">Success Moment</div>
+      <div class="voice-text">"Nice work! 🎉 Your meals and grocery list are ready. You're all set to save money and cook something great."</div>
+      <div class="voice-note">Positive · Reinforces value · Human warmth</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-type" style="color:#2AAFA5">Error — Calm & Clear</div>
+      <div class="voice-text">"Connection Lost. We couldn't save your list because your internet dropped. Check your connection and try again."</div>
+      <div class="voice-note">No blame · Simple explanation · Next step clear</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-type" style="color:#9B7A00">Motivational Nudge</div>
+      <div class="voice-text">"3 items on your list are on sale this week. Want to see what you can make? It only takes a minute."</div>
+      <div class="voice-note">Encouraging · Low-pressure · Action-oriented</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══ 07. ICONOGRAPHY ═══════════════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">07 — Iconography</div>
+  <h2 class="section-title">Icon Style</h2>
+  <div class="icon-row">
+    <div class="icon-tile"><div class="icon-bg" style="background:var(--green-light)">🥗</div><div class="icon-label">Recipe</div></div>
+    <div class="icon-tile"><div class="icon-bg" style="background:var(--yellow-lt)">🏷️</div><div class="icon-label">Deal</div></div>
+    <div class="icon-tile"><div class="icon-bg" style="background:var(--orange-lt)">🛒</div><div class="icon-label">Grocery List</div></div>
+    <div class="icon-tile"><div class="icon-bg" style="background:#EDE7F6">⭐</div><div class="icon-label">Saved</div></div>
+    <div class="icon-tile"><div class="icon-bg" style="background:#E3F2FD">📍</div><div class="icon-label">Store Nearby</div></div>
+    <div class="icon-tile"><div class="icon-bg" style="background:var(--green-light)">🌱</div><div class="icon-label">Healthy</div></div>
+    <div class="icon-tile"><div class="icon-bg" style="background:var(--yellow-lt)">💰</div><div class="icon-label">Savings</div></div>
+    <div class="icon-tile"><div class="icon-bg" style="background:#FCE4EC">❤️</div><div class="icon-label">Preference</div></div>
+  </div>
+  <p style="margin-top:18px;font-size:13px;color:var(--slate-soft);line-height:1.65">
+    Icons follow a <strong>rounded, filled</strong> style with consistent weights. Emoji-style icons for delight moments; line icons for navigation and functional UI. All icons must meet WCAG 2.1 AA contrast.
+  </p>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══ 08. DESIGN PRINCIPLES ═════════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="section-eyebrow">08 — Principles</div>
+  <h2 class="section-title">Design Principles</h2>
+  <div class="principles">
+    <div class="principle" style="background:var(--green);color:white">
+      <div class="p-num">01</div>
+      <div class="p-title">Accessible First</div>
+      <div class="p-desc">Every feature should feel achievable. Clear language, high contrast, legible type at every size.</div>
+    </div>
+    <div class="principle" style="background:var(--orange);color:white">
+      <div class="p-num">02</div>
+      <div class="p-title">Reduce Effort</div>
+      <div class="p-desc">Remove friction wherever possible. One tap to save a recipe. Two taps to build a list.</div>
+    </div>
+    <div class="principle" style="background:var(--yellow);color:var(--slate)">
+      <div class="p-num">03</div>
+      <div class="p-title">Real-Life Solutions</div>
+      <div class="p-desc">Design for busy, tired, real people — not idealized meal planners with unlimited time.</div>
+    </div>
+    <div class="principle" style="background:var(--slate);color:white">
+      <div class="p-num">04</div>
+      <div class="p-title">Never Judge</div>
+      <div class="p-desc">No guilt. No "you should." Support every user's choices and make decisions feel right.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ═════════════════════════════════════════════════════════════════ -->
+<div class="footer">
+  <div>
+    <div class="footer-brand">Food<span>Saves</span></div>
+    <div class="footer-tagline">Turn deals into meals.</div>
+  </div>
+  <div class="footer-note">Brand Mood Board · Visual Identity · v2.0 · 2026<br/>
+    Photos via <a href="https://unsplash.com" style="color:rgba(255,255,255,.5);text-decoration:none">Unsplash</a> (free for commercial use)
+  </div>
+</div>
+
+</body>
+</html>
